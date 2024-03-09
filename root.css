@@ -1,0 +1,25 @@
+:root {
+    --white: #FFFFFA;
+    --cream: #EBF5EE;
+    --pink: #FF7477;
+    --dark: #143C49;
+}
+
+body {
+    background-color: var(--white);
+}
+
+@font-face {
+    font-family: "DxAiter";
+    src: url(./my-fonts/Dx\ Aiter\ Free\ Demo.otf);
+}
+
+@font-face {
+    font-family: "ElanorBold";
+    src: url(./my-fonts/ElanorFreePersonalUse-ExBdIt.otf);
+}
+
+@font-face {
+    font-family: "ElanorLight";
+    src: url(./my-fonts/ElanorFreePersonalUse-ExtLt.otf);
+}

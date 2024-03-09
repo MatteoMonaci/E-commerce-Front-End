@@ -1,0 +1,60 @@
+.myborder {
+    border: 1px solid red;
+}
+
+.mybordertwo {
+    border: 1px solid blue;
+}
+
+p {
+    margin: 0;
+}
+
+h2 {
+    font-family: "ElanorLight";
+    font-weight: 100;
+    font-size: 24px;
+}
+
+.vh-title-container {
+    height: 60vh;
+}
+
+.vh-title-containerDue {
+    height: 40vh;
+}
+
+#home-title div {
+    font-size: 150px;
+    font-family: "ElanorBold";
+    display: inline-block;
+    animation: welcome 2.5s ease-in-out infinite;
+    animation-delay: calc(.15s*var(--index));
+}
+
+@keyframes welcome {
+    0% {
+        color: var(--black);
+        transform: scale(1);
+        letter-spacing: 14px;
+        transform: translateX(0);
+    }
+    25% {
+        transform: scale(1.4);
+        color: var(--pink);
+        letter-spacing: 40px;
+        transform: translateX(100px);
+    }
+    40% {
+        color: var(--black);
+    }
+    50%, 100% {
+        transform: scale(1);
+        letter-spacing: 14px;
+        transform: translateX(0);
+    }
+}
+
+.main-ann {
+    background-color: darkred;
+}
