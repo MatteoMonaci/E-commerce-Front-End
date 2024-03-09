@@ -6,33 +6,21 @@
     border: 1px solid blue;
 }
 
-p {
-    margin: 0;
-}
-
-h2 {
+#index h2 {
     font-family: "ElanorLight";
     font-weight: 100;
     font-size: 24px;
 }
 
-.vh-title-container {
-    height: 60vh;
-}
-
-.vh-title-containerDue {
-    height: 40vh;
-}
-
 #home-title div {
     font-size: 150px;
+    letter-spacing: 10px;
+    transform: translateX(-50px);
     font-family: "ElanorBold";
     display: inline-block;
-    animation: welcome 2.5s ease-in-out infinite;
-    animation-delay: calc(.15s*var(--index));
 }
 
-@keyframes welcome {
+/* @keyframes welcome {
     0% {
         color: var(--black);
         transform: scale(1);
@@ -53,8 +41,42 @@ h2 {
         letter-spacing: 14px;
         transform: translateX(0);
     }
+} */
+
+@keyframes welcomeFull {
+    0% {
+        color: var(--black);
+        transform: translateX(-50px);
+        letter-spacing: 10px;
+    }
+    30%{
+        color: var(--pink);
+    }
+    50% {
+        transform: translateX(50px);
+        letter-spacing: 44px;
+    }
+    60% {
+        color: var(--dark);
+    }
+    100% {
+        transform: translateX(-50px);
+        letter-spacing: 10px;
+    }
 }
 
-.main-ann {
-    background-color: darkred;
+@keyframes welcomeHalf {
+    0%, 10% {
+        color: var(--black);
+    }
+    50% {
+        color: var(--pink);
+    }
+    90%, 100% {
+        color: var(--black);
+    }
+}
+
+#layout {
+    height: 400px;
 }
