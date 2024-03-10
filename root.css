@@ -2,7 +2,8 @@
     --white: #FFFFFA;
     --cream: #EBF5EE;
     --pink: #FF7477;
-    --dark: #143C49;
+    /* --dark: #143C49; */
+    --dark: green;
 }
 
 .myBorder {
@@ -11,6 +12,11 @@
 
 .myBorderTwo {
     border: 1px solid blue;
+}
+
+* {
+    color: var(--dark);
+    font-family: "poppins", "helvetica", sans-serif;
 }
 
 body {

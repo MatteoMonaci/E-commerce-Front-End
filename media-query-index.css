@@ -2,6 +2,10 @@
 @media (max-width: 575px) {
 
     /* HEADER START */
+    #index header {
+        height: 80vh;
+    }
+
     #title div {
         font-size: 18vw;
         transform: translateX(-1.1vw);
@@ -17,6 +21,10 @@
 @media (min-width: 576px) {
 
     /* HEADER START */
+    #index header {
+        height: 100vh;
+    }
+
     #title div {
         font-size: 18vw;
         transform: translateX(-0.8vw);
