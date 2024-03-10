@@ -5,8 +5,17 @@
     --dark: #143C49;
 }
 
+.myBorder {
+    border: 1px solid red;
+}
+
+.myBorderTwo {
+    border: 1px solid blue;
+}
+
 body {
     background-color: var(--white);
+
 }
 
 @font-face {

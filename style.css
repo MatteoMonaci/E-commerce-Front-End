@@ -1,23 +1,21 @@
-.myborder {
-    border: 1px solid red;
+.navbar {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--pink);
+    color: var(--black);
 }
 
-.mybordertwo {
-    border: 1px solid blue;
-}
+
+/* START HEADER */
 
 #index h2 {
     font-family: "ElanorLight";
-    font-weight: 100;
-    font-size: 24px;
 }
 
-#home-title div {
-    font-size: 150px;
-    letter-spacing: 10px;
-    transform: translateX(-50px);
+#title div {
     font-family: "ElanorBold";
     display: inline-block;
+    animation: welcomeHalf 2s ease-in-out infinite;
+    animation-delay: calc(.15s*var(--index));
 }
 
 /* @keyframes welcome {
@@ -46,21 +44,21 @@
 @keyframes welcomeFull {
     0% {
         color: var(--black);
-        transform: translateX(-50px);
+        transform: translateX(-40px);
         letter-spacing: 10px;
     }
     30%{
         color: var(--pink);
     }
     50% {
-        transform: translateX(50px);
+        transform: translateX(60px);
         letter-spacing: 44px;
     }
     60% {
         color: var(--dark);
     }
     100% {
-        transform: translateX(-50px);
+        transform: translateX(-40px);
         letter-spacing: 10px;
     }
 }
@@ -77,6 +75,9 @@
     }
 }
 
-#layout {
-    height: 400px;
+/* END HEADER */
+
+
+.last-ann-container {
+    margin: 0 10%;
 }
