@@ -59,17 +59,17 @@
 
     <!-- statistics -->
     <div class="container container-small">
-      <div class="row mb-5 justify-content-between">
-        <div class="col-12 col-md-6 mt-4">
+      <div class="row mb-5 justify-content-around statistics-row">
+        <div class="col-12 col-md-5 mt-4">
           <div class="d-flex justify-content-between align-items-end border-statistics w-100 px-4">
-            <p class="d-inline-block subject-stat">Utenti registrati</p>
-            <p class="d-inline-block numbers-stat">123k</p>
+            <p class="d-inline-block subject-stat">Users</p>
+            <p class="d-inline-block numbers-stat" id="reg-users">0</p>
           </div>
         </div>
-        <div class="col-12 col-md-6 mt-4">
+        <div class="col-12 col-md-5 mt-4">
           <div class="d-flex justify-content-between align-items-end border-statistics w-100 px-4">
-            <p class="d-inline-block subject-stat">Utenti registrati</p>
-            <p class="d-inline-block numbers-stat">123k</p>
+            <p class="d-inline-block subject-stat">Entries</p>
+            <p class="d-inline-block numbers-stat" id="total-ann">0</p>
           </div>
         </div>
       </div>
@@ -80,8 +80,8 @@
       <h3>last announcements</h3>
       <div class="row m-0 px-5 text-start" id="cards-wrapper">
         <!-- <div class="col-12 col-lg-3 d-flex justify-content-center">
-          <div class="card" style="width: 100%;">
-            <img src="https://picsum.photos/1000" class="card-img-top w-100" alt="...">
+          <div class="card">
+            <div class="card-img-top"></div>
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

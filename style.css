@@ -88,7 +88,7 @@
 .subject-stat {
     font-family: "poppins", Helvetica, sans-serif;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 .numbers-stat {
@@ -114,11 +114,13 @@
 }
 
 .card-img-top {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;
-    margin: auto;
-    padding: 20px;
+    width: 100%;
+    padding-top: 100%;
+    /* background-image: url('https://picsum.photos/200/400'); */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--white);
 }
 
 .card-body {
