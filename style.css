@@ -107,17 +107,18 @@
 
     & h3 {
         font-family: "ElanorLight";
-        font-size: calc(1.5rem + .9vw);
+        font-size: calc(1.8rem + .9vw);
         margin: 0;
-        padding: 40px 0;
+        padding: 60px 0;
     }
 }
 
 .card-img-top {
     width: 100%;
     padding-top: 100%;
-    /* background-image: url('https://picsum.photos/200/400'); */
+    border: 20px solid white;
     background-size: contain;
+    background-origin: padding-box;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--white);

@@ -33,7 +33,7 @@ const statRowObserver = new IntersectionObserver(entries => {
             countingConfirm = false;
         }
     });
-}, { threshold: 1, rootMargin: '-50px'});
+}, { threshold: 1, rootMargin: '-30px'});
 
 statRowObserver.observe(statRow);
 
@@ -88,22 +88,28 @@ fetch('https://fakestoreapi.com/products')
 .then(res=>res.json())
 .then(data=> {
 
+    // show cards index
     let cardsWrapper = $('#cards-wrapper');
 
-    function showCardsIndex(num) {       
-        let lastFour = data.slice(num)
+    function showCardsIndex(num) {
+
+        let lastFour = data.slice(-num)
     
         lastFour.forEach((ann) => {
             let card = document.createElement('div');
-            card.classList.add('col-12', 'col-md-6', 'col-lg-3', 'd-flex', 'justify-content-center');
+            card.classList.add('col-12', 'col-sm-6', 'col-lg-3', 'd-flex', 'justify-content-center');
             card.innerHTML = `
-                <div class="card">
+                <div class="card mb-4" style="width: 18rem;">
                     <div class="card-img-top"></div>
-                    <div class="card-body">
-                        <h5 class="card-title">${troncateTitle(ann.title)}</h5>
-                        <p class="card-text">${troncateDesc(ann.description)}</p>
-                        <p class="card-text">Price: ${ann.price}$</p>
-                        <a href="#" class="btn btn-buy"><i class="fa-solid fa-bag-shopping me-2"></i>Buy !</a>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="card-title">${troncateTitle(ann.title)}</h5>
+                            <p class="card-text">${troncateDesc(ann.description)}</p>
+                            </div>
+                        <div class="mt-3">
+                            <p class="card-text">Price: ${ann.price}$</p>
+                            <a href="#" class="btn btn-buy"><i class="fa-solid fa-bag-shopping me-2"></i>Buy !</a>
+                        </div>
                     </div>
                 </div>
             `
@@ -114,6 +120,48 @@ fetch('https://fakestoreapi.com/products')
         })
     }
 
-    showCardsIndex(-4);
+    let lastAnnBtn = $('#last-ann-btn');
+    console.log(lastAnnBtn);
+    let lastAnnBntWrapper = $('#last-ann-bnt-wrapper');
+    console.log(lastAnnBntWrapper);
+    let confirmLastAnnBtn = true;
+
+    lastAnnBtn.addEventListener('click', () => {
+
+        if (confirmLastAnnBtn) {
+            cardsWrapper.innerHTML = "";
+            showCardsIndex(8);
+            lastAnnBtn.innerHTML = "see all"
+            confirmLastAnnBtn = false;
+
+            // creating link see less
+            let btn = document.createElement('btn');
+            btn.innerText = "see less"
+            btn.classList.add('text-decoration-underline', 'd-block', 'mt-2')
+            btn.style.color = "var(--dark)"
+            lastAnnBntWrapper.appendChild(btn);
+
+            // event on link see less
+            btn.addEventListener('click', () => {
+                cardsWrapper.innerHTML = "";
+                showCardsIndex(4);
+                btn.innerHTML = ""
+                lastAnnBtn.innerHTML = "see more";
+                confirmLastAnnBtn = true;
+
+                // come back to last announcements position
+                const marginTop = 100;
+                const position = lastAnnContainer.getBoundingClientRect().top + window.scrollY - marginTop;
+                window.scrollTo({top: position})
+            })
+        } else {
+            cardsWrapper.innerHTML = "";
+            showCardsIndex(4);
+            lastAnnBtn.innerHTML = "see more"
+            confirmLastAnnBtn = true;
+        }
+    })
+
+    showCardsIndex(4);
 
 });
