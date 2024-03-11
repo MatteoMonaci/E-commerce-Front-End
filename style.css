@@ -1,10 +1,10 @@
+/* NAVBAR */
+
 .navbar {
     background-color: var(--white);
     border-bottom: 1px solid var(--pink);
     color: var(--black);
 }
-
-/* START NAVBAR */
 
 .navbar-brand {
     font-family: "ElanorBold";
@@ -12,14 +12,25 @@
     color: var(--dark);
 }
 
-.nav-link {
-    /* color: rgba(var(--dark), 0.2); */
-    /* color:rgba(var(--dark), 0.1); */
+#index .nav-link-custom {
+    color: rgba(20, 60, 73, 0.7);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--dark);
+    }
+
+    &:active {
+        color: var(--dark);
+    }
 }
 
-/* END NAVBAR */
 
-/* START HEADER */
+/* HEADER */
+
+#index header {
+    height: 85vh;
+}
 
 #index h2 {
     font-family: "ElanorLight";
@@ -66,9 +77,28 @@
     }
 }
 
-/* END HEADER */
 
-/* START LAST ANNOUNCEMENTS */
+/* STATISTICS */
+
+
+.border-statistics {
+    border-bottom: 2px solid var(--pink);
+}
+
+.subject-stat {
+    font-family: "poppins", Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.numbers-stat {
+    font-family: "ElanorBold";
+    font-size: 3rem;
+    transform: translateY(20px);
+}
+
+
+/* LAST ANNOUNCEMENTS */
 
 .last-ann-container {
     margin: 0 10%;
@@ -84,7 +114,11 @@
 }
 
 .card-img-top {
-    background-image: cover;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin: auto;
+    padding: 20px;
 }
 
 .card-body {
@@ -136,6 +170,3 @@
         box-shadow: inset 0 0 2px 0px var(--dark);
     }
 }
-
-
-/* END LAST ANNOUNCEMENTS */

@@ -27,7 +27,7 @@
   <body id="index">
 
     <!-- navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.html">home</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,7 +36,7 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">all announcements</a>
+                <a class="nav-link-custom" aria-current="page" href="#">all announcements</a>
               </li>
             </ul>
           </div>
@@ -45,7 +45,7 @@
 
     <!-- header -->
     <header class="d-flex align-items-center justify-content-center flex-column">
-        <h1 id="title" class="">
+        <h1 id="title">
           <div style="--index:0">w</div>
           <div style="--index:1">e</div>
           <div style="--index:2">l</div>
@@ -57,11 +57,29 @@
         <h2>to my e-commerce demo app</h2>
     </header>
 
+    <!-- statistics -->
+    <div class="container container-small">
+      <div class="row mb-5 justify-content-between">
+        <div class="col-12 col-md-6 mt-4">
+          <div class="d-flex justify-content-between align-items-end border-statistics w-100 px-4">
+            <p class="d-inline-block subject-stat">Utenti registrati</p>
+            <p class="d-inline-block numbers-stat">123k</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mt-4">
+          <div class="d-flex justify-content-between align-items-end border-statistics w-100 px-4">
+            <p class="d-inline-block subject-stat">Utenti registrati</p>
+            <p class="d-inline-block numbers-stat">123k</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- last announcements -->
     <div class="last-ann-container text-center">
       <h3>last announcements</h3>
-      <div class="row m-0 px-5 text-start ">
-        <div class="col-6 col-lg-3 d-flex justify-content-center">
+      <div class="row m-0 px-5 text-start" id="cards-wrapper">
+        <!-- <div class="col-12 col-lg-3 d-flex justify-content-center">
           <div class="card" style="width: 100%;">
             <img src="https://picsum.photos/1000" class="card-img-top w-100" alt="...">
             <div class="card-body">
@@ -70,51 +88,10 @@
               <a href="#" class="btn btn-buy"><i class="fa-solid fa-bag-shopping me-2"></i>Buy !</a>
             </div>
           </div>
-        </div>
-        <div class="col-6 col-lg-3 d-flex justify-content-center">
-          <div class="card" style="width: 100%;">
-            <img src="https://picsum.photos/1000" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-buy"><i class="fa-solid fa-bag-shopping me-2"></i>Buy !</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3 d-flex justify-content-center">
-          <div class="card" style="width: 100%;">
-            <img src="https://picsum.photos/1000" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-buy"><i class="fa-solid fa-bag-shopping me-2"></i>Buy !</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3 d-flex justify-content-center">
-          <div class="card" style="width: 100%;">
-            <img src="https://picsum.photos/1000" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-buy"><i class="fa-solid fa-bag-shopping me-2"></i>Buy !</a>
-            </div>
-          </div>
-        </div>
+        </div> -->
       </div>
       <button id="last-ann-btn" class="btn mt-4">see more</button>
     </div>
-
-    <!-- <div class="container myBorderTwo p-0">
-      <div class="row m-0">
-        <div class="col-6 myBorder ">
-          ciao
-        </div>
-        <div class="col-6 myBorder">
-          ciao
-        </div>
-      </div>
-    </div> -->
 
     <main>
       <div class="container" style="height: 2000px;">

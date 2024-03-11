@@ -1,9 +1,8 @@
 :root {
-    --white: #FFFFFA;
+    --white: rgb(255, 255, 250);
     --cream: #EBF5EE;
-    --pink: #FF7477;
-    /* --dark: #143C49; */
-    --dark: green;
+    --pink: rgb(255, 116, 119);
+    --dark: rgb(20, 60, 73);
 }
 
 .myBorder {
@@ -24,10 +23,6 @@ body {
 
 }
 
-@font-face {
-    font-family: "DxAiter";
-    src: url(./my-fonts/Dx\ Aiter\ Free\ Demo.otf);
-}
 
 @font-face {
     font-family: "ElanorBold";
