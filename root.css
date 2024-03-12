@@ -1,6 +1,6 @@
 :root {
     --white: rgb(255, 255, 250);
-    --cream: #EBF5EE;
+    --cream: rgb(235, 245, 238);
     --pink: rgb(255, 116, 119);
     --dark: rgb(20, 60, 73);
 }
@@ -20,7 +20,6 @@
 
 body {
     background-color: var(--white);
-
 }
 
 

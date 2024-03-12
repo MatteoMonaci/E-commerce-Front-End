@@ -18,6 +18,12 @@
         width: 80%;
     }
 
+    /* LAST ANNOUNCEMENTS */
+    #cards-wrapper {
+        overflow-x: auto; 
+        flex-wrap: nowrap;
+    }
+
 }
   
 /* Small */

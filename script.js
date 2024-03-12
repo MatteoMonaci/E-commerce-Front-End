@@ -1,6 +1,7 @@
 const $ = (s, o=document) => o.querySelector(s);
 const $$ = (s, o=document) => o.querySelectorAll(s)
 
+
 //! function intervall
 
 let regUsers = $('#reg-users');
@@ -40,31 +41,12 @@ statRowObserver.observe(statRow);
 
 //! functions troncate
 
-function troncateTitle(string) {
-
-    if (visualViewport.width < 576) {
-        return string.slice(0, 16) + "..."
-    } else if (visualViewport.width < 769) {
-        return string.slice(0, 14) + "..."
-    } else if (visualViewport.width < 992) {
-        return string.slice(0, 16) + "..."
-    } else {
-        return string.slice(0, 24) + "..."
+function troncate (string, cut) {
+    if (string.length > cut) {
+        return string.slice(0, cut) + "..."
     }
 }
 
-function troncateDesc(string) {
-
-    if (visualViewport.width < 576) {
-        return string.slice(0, 24) + "..."
-    } else if (visualViewport.width < 769) {
-        return string.slice(0, 56) + "..."
-    } else if (visualViewport.width < 992) {
-        return string.slice(0, 45) + "..."
-    } else {
-        return string.slice(0, 44) + "..."
-    }
-}
 
 //! intesection last announcements section
 
@@ -82,6 +64,7 @@ const lastAnnContainerObserver = new IntersectionObserver(entries => {
 
 lastAnnContainerObserver.observe(lastAnnContainer);
 
+
 //! fecth last announcements
 
 fetch('https://fakestoreapi.com/products')
@@ -91,23 +74,23 @@ fetch('https://fakestoreapi.com/products')
     // show cards index
     let cardsWrapper = $('#cards-wrapper');
 
-    function showCardsIndex(num) {
+    function showCardsLastAnn(num) {
 
-        let lastFour = data.slice(-num)
+        let lastAnn = data.slice(-num)
     
-        lastFour.forEach((ann) => {
+        lastAnn.forEach((ann) => {
             let card = document.createElement('div');
-            card.classList.add('col-12', 'col-sm-6', 'col-lg-3', 'd-flex', 'justify-content-center');
+            card.classList.add('col-10', 'col-sm-6', 'col-lg-3', 'd-flex', 'justify-content-center');
             card.innerHTML = `
                 <div class="card mb-4" style="width: 18rem;">
                     <div class="card-img-top"></div>
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
-                            <h5 class="card-title">${troncateTitle(ann.title)}</h5>
-                            <p class="card-text">${troncateDesc(ann.description)}</p>
+                            <h5 class="card-title">${troncate(ann.title, 30)}</h5>
+                            <p class="card-text">${troncate(ann.description, 80)}</p>
                             </div>
                         <div class="mt-3">
-                            <p class="card-text">Price: ${ann.price}$</p>
+                            <p class="card-text price">Price: ${ann.price}$</p>
                             <a href="#" class="btn btn-buy"><i class="fa-solid fa-bag-shopping me-2"></i>Buy !</a>
                         </div>
                     </div>
@@ -121,30 +104,30 @@ fetch('https://fakestoreapi.com/products')
     }
 
     let lastAnnBtn = $('#last-ann-btn');
-    console.log(lastAnnBtn);
     let lastAnnBntWrapper = $('#last-ann-bnt-wrapper');
-    console.log(lastAnnBntWrapper);
     let confirmLastAnnBtn = true;
 
     lastAnnBtn.addEventListener('click', () => {
 
         if (confirmLastAnnBtn) {
             cardsWrapper.innerHTML = "";
-            showCardsIndex(8);
+            showCardsLastAnn(8);
             lastAnnBtn.innerHTML = "see all"
+            // window.location.href = "announcements.html";
             confirmLastAnnBtn = false;
 
             // creating link see less
-            let btn = document.createElement('btn');
+            let btn = document.createElement('a');
             btn.innerText = "see less"
             btn.classList.add('text-decoration-underline', 'd-block', 'mt-2')
+            btn.role = "button"
             btn.style.color = "var(--dark)"
             lastAnnBntWrapper.appendChild(btn);
-
+            
             // event on link see less
             btn.addEventListener('click', () => {
                 cardsWrapper.innerHTML = "";
-                showCardsIndex(4);
+                showCardsLastAnn(4);
                 btn.innerHTML = ""
                 lastAnnBtn.innerHTML = "see more";
                 confirmLastAnnBtn = true;
@@ -156,12 +139,20 @@ fetch('https://fakestoreapi.com/products')
             })
         } else {
             cardsWrapper.innerHTML = "";
-            showCardsIndex(4);
+            showCardsLastAnn(4);
             lastAnnBtn.innerHTML = "see more"
             confirmLastAnnBtn = true;
+
+            window.location.href = "announcements.html";
         }
     })
 
-    showCardsIndex(4);
+
+    if (window.visualViewport.width < 576) {
+        showCardsLastAnn(6);
+
+    } else {
+        showCardsLastAnn(4);
+    }
 
 });

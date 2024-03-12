@@ -100,6 +100,20 @@
 
 /* LAST ANNOUNCEMENTS */
 
+.cards-wrapper {
+    transition: 1s ease;
+    padding-right: 100px;
+}
+
+::-webkit-scrollbar{
+    background: transparent;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 .last-ann-container {
     margin: 0 10%;
     background-color: var(--pink);
@@ -115,7 +129,7 @@
 
 .card-img-top {
     width: 100%;
-    padding-top: 100%;
+    padding-top: 50%;
     border: 20px solid white;
     background-size: contain;
     background-origin: padding-box;
@@ -129,13 +143,21 @@
     border-radius: 0 0 0.375rem 0.375rem;
 
     & h5 {
-        font-size: 1.5rem;
+        font-weight: 400;
+        font-size: calc(.7rem + .8vw);
+    }
+
+    & .card-text {
+        font-weight: 200;
+        font-size: calc(.7rem + .3vw);
+    }
+
+    & .price {
+        font-weight: 400;
+        font-size: calc(.7rem + .3vw);
     }
 }
 
-.card-text {
-    font-weight: 200;
-}
 
 .fa-bag-shopping {
     font-size: 1.2rem;
