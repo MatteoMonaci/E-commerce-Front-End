@@ -1,8 +1,13 @@
 /* Extra small */
 @media (max-width: 575px) {
 
-    /* HEADER */
+    .container {
+        width: 90%;
+    }
 
+    
+
+    /* HEADER */
     #title div {
         font-size: 18vw;
         letter-spacing: -5px;

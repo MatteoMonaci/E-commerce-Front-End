@@ -87,10 +87,10 @@
     </div>
 
     <!-- promotion -->
-    <div class="container mt-5">
+    <div class="container promotion-margin">
       <div class="row justify-content-between">
         <!-- counter -->
-        <div class="col-12 col-lg-5">
+        <div class="col-12 col-lg-5 pt-1">
           <div class="row">
             <div class="col-12 mb-1 mb-lg-2 text-center text-lg-start promotion-titles">
               <h5>Free Shipping</h5>
@@ -118,37 +118,45 @@
         </div>
         
         <!-- form -->
-        <div class="form col-12 col-lg-6 d-flex flex-column justify-content-around">
-          <!-- name - last name -->
-          <div class="row">
-            <div class="col-6">
-              <div>
-                <label class="d-block" for="name">name</label>
-                <input class="" name="name" type="text" style="width: 80%;">
+        <div class="form col-12 col-lg-6">
+          <form action="" class="d-flex flex-column justify-content-around h-100">
+            <!-- name - last name -->
+            <div class="row">
+              <div class="col-6">
+                <div>
+                  <label class="d-block" for="name">name</label>
+                  <input class="" name="name" type="text">
+                </div>
+              </div>
+              <div class="col-6">
+                <label class="d-block" for="last-name">last name</label>
+                <input class="" name="name" type="text">
               </div>
             </div>
-            <div class="col-6">
-              <label class="d-block" for="last-name">last name</label>
-              <input class="" name="name" type="text" style="width: 80%;">
+            <!-- email - button -->
+            <div class="row pt-3 pt-sm-5">
+              <div class="col-12 col-sm-8">
+                <label class="d-block" for="email">email</label>
+                <input class="" id="email" type="text">
+              </div>
+              <div class="col-12 col-sm-4 mt-5 mt-sm-0 d-flex justify-content-center justify-content-sm-end align-items-end">
+                <button type="button" class="btn btn-register " data-dismiss="modal">register</button>
+              </div>
             </div>
-          </div>
-          <!-- email - button -->
-          <div class="row">
-            <div class="col-8">
-              <label class="d-block" for="email">email</label>
-              <input class="" name="email" type="text" style="width: 100%;">
-            </div>
-            <div class="col-4">ciao</div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
 
-
-    <main>
-      <div class="container" style="height: 2000px;">
+    <!-- footer -->
+    <footer>
+      <div class="text-center">
+        <h6>Contacts</h6>
+        <p>email: <span>behappy@smile.com</span></p>
+        <p>tel: <span>333 333 33 33</span></p>
+        <p>address: <span>Via Buongiorno, Mi</span></p>
       </div>
-    </main>
+    </footer>
 
     <!-- js links -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

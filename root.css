@@ -2,7 +2,8 @@
     --white: rgb(255, 255, 250);
     --cream: rgb(235, 245, 238);
     --pink: rgb(255, 116, 119);
-    --dark: rgb(20, 60, 73);
+    --dark: #143c49;
+    --secondary-dark: #455C63;
 }
 
 .B {
