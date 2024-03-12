@@ -5,11 +5,11 @@
     --dark: rgb(20, 60, 73);
 }
 
-.myBorder {
+.B {
     border: 1px solid red;
 }
 
-.myBorderTwo {
+.A {
     border: 1px solid blue;
 }
 

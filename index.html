@@ -88,37 +88,59 @@
 
     <!-- promotion -->
     <div class="container mt-5">
-      <div class="row justify-content-around">
-
-
-        <div class="col-12 col-md-5">
+      <div class="row justify-content-between">
+        <!-- counter -->
+        <div class="col-12 col-lg-5">
+          <div class="row">
+            <div class="col-12 mb-1 mb-lg-2 text-center text-lg-start promotion-titles">
+              <h5>Free Shipping</h5>
+              <p>for new users end in:</p>
+            </div>
+          </div>
           
-        </div>
-
-
-        <div class="col-12 col-md-5">
-          <div class="d-flex">
-            <div class="me-5">
-              <label for="name" class="d-block">name</label>
-              <input name="name" type="text">
+          <!-- time -->
+          <div class="row justify-content-between">
+            <div class="col-3 time">
+              <p class="text-center m-0 time">00</p>
+              <p class="text-center time-tag">hours</p>
             </div>
-            <div>
-              <label for="last-name" class="d-block">last name</label>
-              <input name="last-name" type="text">
+            <div class="col-1 time-symbol text-center my-auto">:</div>
+            <div class="col-3 time">
+              <p class="text-center m-0 time">00</p>
+              <p class="text-center time-tag">mins</p>
             </div>
-          </div>
-          <div class="d-flex">
-            <div class="me-5">
-              <label for="email" class="d-block ">email</label>
-              <input name="email" type="email">
-            </div>
-            <div class="mt-auto">
-              <button id="btn-register">register</button>
+            <div class="col-1 time-symbol text-center my-auto">:</div>
+            <div class="col-3 time">
+              <p class="text-center m-0 time">00</p>
+              <p class="text-center time-tag">sec</p>
             </div>
           </div>
         </div>
-
-
+        
+        <!-- form -->
+        <div class="form col-12 col-lg-6 d-flex flex-column justify-content-around">
+          <!-- name - last name -->
+          <div class="row">
+            <div class="col-6">
+              <div>
+                <label class="d-block" for="name">name</label>
+                <input class="" name="name" type="text" style="width: 80%;">
+              </div>
+            </div>
+            <div class="col-6">
+              <label class="d-block" for="last-name">last name</label>
+              <input class="" name="name" type="text" style="width: 80%;">
+            </div>
+          </div>
+          <!-- email - button -->
+          <div class="row">
+            <div class="col-8">
+              <label class="d-block" for="email">email</label>
+              <input class="" name="email" type="text" style="width: 100%;">
+            </div>
+            <div class="col-4">ciao</div>
+          </div>
+        </div>
       </div>
     </div>
 
