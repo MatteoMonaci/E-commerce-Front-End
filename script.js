@@ -78,7 +78,7 @@ fetch('https://fakestoreapi.com/products')
 
         let lastAnn = data.slice(-num)
     
-        lastAnn.forEach((ann) => {
+        lastAnn.forEach((ann, index) => {
             let card = document.createElement('div');
             card.classList.add('col-10', 'col-sm-6', 'col-lg-3', 'd-flex', 'justify-content-center');
             card.innerHTML = `
@@ -86,12 +86,12 @@ fetch('https://fakestoreapi.com/products')
                     <div class="card-img-top"></div>
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
-                            <h5 class="card-title">${troncate(ann.title, 30)}</h5>
+                            <h5 class="card-title" id="title_${index}">${troncate(ann.title, 30)}</h5>
                             <p class="card-text">${troncate(ann.description, 80)}</p>
                             </div>
                         <div class="mt-3">
                             <p class="card-text price">Price: ${ann.price}$</p>
-                            <a href="#" class="btn btn-buy"><i class="fa-solid fa-bag-shopping me-2"></i>Buy !</a>
+                            <button class="btn btn-buy"><i class="fa-solid fa-bag-shopping me-2"></i>Buy !</button>
                         </div>
                     </div>
                 </div>
@@ -100,7 +100,11 @@ fetch('https://fakestoreapi.com/products')
             let cardImgTop = card.querySelector('.card-img-top');
             cardImgTop.style.backgroundImage = `url('${ann.image}')`;
             cardsWrapper.prepend(card);
+
         })
+
+        dialog();
+
     }
 
     let lastAnnBtn = $('#last-ann-btn');
@@ -155,6 +159,27 @@ fetch('https://fakestoreapi.com/products')
         showCardsLastAnn(4);
     }
 
+    
+    function dialog() {
+        let dBuy = $('.d-buy')
+        
+        let btnBuy = $$('.btn-buy')
+        
+        function openDialog() {
+            dBuy.setAttribute('open', true);
+            console.log('Dialog opened');
+        }
+        let btnDialogBuy = $('.btn-dialog-buy')
+        
+        btnBuy.forEach((btn) => {
+            btn.addEventListener('click', openDialog) 
+        })
+        
+        btnDialogBuy.addEventListener('click', () => {
+            dBuy.close()
+        })
+    }
+
 });
 
 
@@ -164,14 +189,12 @@ let min = $('#min')
 let remMin = 11
 min.innerHTML = remMin
 
-
 let sec = $('#sec')
 let remSec = 0
 sec.innerHTML = remSec
 
 let timeInterval = setInterval(() => {
     if (remMin > 0 && remSec == 0) {
-        console.log('ciao');
         remSec = 59
         remMin -- 
         if (remMin < 10) {
@@ -188,7 +211,6 @@ let timeInterval = setInterval(() => {
             sec.innerHTML = remSec
         }
     } else {
-        console.log("fine");
         clearInterval(timeInterval)
     }
-}, 100)
+}, 1000)
