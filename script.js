@@ -159,3 +159,6 @@ fetch('https://fakestoreapi.com/products')
 
 
 //! promotion 
+
+let matteo = document.querySelector('#matteo')
+console.log(matteo);
