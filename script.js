@@ -158,7 +158,37 @@ fetch('https://fakestoreapi.com/products')
 });
 
 
-//! promotion 
+//! promotion
 
-let matteo = document.querySelector('#matteo')
-console.log(matteo);
+let min = $('#min')
+let remMin = 11
+min.innerHTML = remMin
+
+
+let sec = $('#sec')
+let remSec = 0
+sec.innerHTML = remSec
+
+let timeInterval = setInterval(() => {
+    if (remMin > 0 && remSec == 0) {
+        console.log('ciao');
+        remSec = 59
+        remMin -- 
+        if (remMin < 10) {
+            min.innerHTML = "0" + remMin
+        } else {
+            min.innerHTML = remMin
+        }
+        sec.innerHTML = remSec
+    } else if (remSec > 0) {
+        remSec --
+        if (remSec < 10) {
+            sec.innerHTML = "0" + remSec
+        } else {
+            sec.innerHTML = remSec
+        }
+    } else {
+        console.log("fine");
+        clearInterval(timeInterval)
+    }
+}, 100)
