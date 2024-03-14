@@ -4,6 +4,9 @@
     --pink: rgb(255, 116, 119);
     --dark: #143c49;
     --secondary-dark: #455C63;
+
+    /* update bootstrap */
+    --bs-accordion-active-bg: var(--pink);
 }
 
 .B {

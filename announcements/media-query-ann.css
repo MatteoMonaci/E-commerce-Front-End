@@ -1,0 +1,35 @@
+/* Extra small */
+@media (max-width: 575px) {
+
+    .container {
+        width: 90%;
+    }
+
+    /* HEADER */
+    #ann header {
+        margin: 50px 0 40px 0;
+    }
+}
+  
+/* Small */
+@media (min-width: 576px) {
+    
+    /* HEADER */
+    #ann header {
+        margin: 80px 0 55px 0;
+    }
+}
+  
+/* Medium */
+@media (min-width: 769px) {
+
+}
+  
+/* Large */
+@media (min-width: 992px) {
+    
+    /* HEADER */
+    #ann header {
+        margin: 100px 0 80px 0;
+    }
+}

@@ -1,0 +1,18 @@
+
+/* NAVBAR */
+#ann .nav-link-custom {
+    color: var(--dark);
+    text-decoration: none;
+}
+
+
+/* HEADER */
+#ann-title {
+    font-family: "Elanorlight";
+    font-size: calc(1rem + 6vw);
+}
+
+/* FILTER */
+.accordion-item, .accordion-flush>.accordion-item:last-child {
+    border: none;
+}

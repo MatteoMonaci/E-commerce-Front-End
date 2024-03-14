@@ -10,6 +10,10 @@
     font-family: "ElanorBold";
     font-size: 1.8rem;
     color: var(--dark);
+
+    &:hover {
+        color: var(--dark);
+    }
 }
 
 #index .nav-link-custom {
