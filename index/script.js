@@ -2,7 +2,7 @@ const $ = (s, o=document) => o.querySelector(s);
 const $$ = (s, o=document) => o.querySelectorAll(s)
 
 
-//! function intervall
+//! statistics
 
 let regUsers = $('#reg-users');
 let totalAnn = $('#total-ann');
@@ -34,7 +34,7 @@ const statRowObserver = new IntersectionObserver(entries => {
             countingConfirm = false;
         }
     });
-}, { threshold: 1, rootMargin: '-30px'});
+}, { threshold: 1, rootMargin: '-20px'});
 
 statRowObserver.observe(statRow);
 
@@ -165,16 +165,15 @@ fetch('https://fakestoreapi.com/products')
         
         let btnBuy = $$('.btn-buy')
         
-        function openDialog() {
+        function openDialogBuy() {
             dBuy.setAttribute('open', true);
-            console.log('Dialog opened');
         }
         let btnDialogBuy = $('.btn-dialog-buy')
         
         btnBuy.forEach((btn) => {
-            btn.addEventListener('click', openDialog) 
+            btn.addEventListener('click', openDialogBuy) 
         })
-        
+
         btnDialogBuy.addEventListener('click', () => {
             dBuy.close()
         })
@@ -185,13 +184,16 @@ fetch('https://fakestoreapi.com/products')
 
 //! promotion
 
+//timer
 let min = $('#min')
-let remMin = 11
+let remMin = 5
 min.innerHTML = remMin
 
 let sec = $('#sec')
 let remSec = 0
 sec.innerHTML = remSec
+
+let hour = $('#hour')
 
 let timeInterval = setInterval(() => {
     if (remMin > 0 && remSec == 0) {
@@ -211,6 +213,51 @@ let timeInterval = setInterval(() => {
             sec.innerHTML = remSec
         }
     } else {
+        hour.style.color = "#D9D9D9"
+        min.style.color = "#D9D9D9"
+        sec.style.color = "#D9D9D9"
+
         clearInterval(timeInterval)
     }
 }, 1000)
+
+
+//form
+let dRegister = $('.d-register')
+
+function register() {
+
+    let emailValue = $('#email').value;
+    let isValid = emailValue.includes("@")
+
+    let emailLabel = $('#email-label')
+    let emailInput = $('#email')
+
+    //validation
+    if (isValid) {
+        dRegister.setAttribute('open', true);
+        let dUserEmail = $('#d-user-email')
+        dUserEmail.innerHTML = emailValue
+    
+        $('#email').value = ''
+        $('#name').value = ''
+        $('#last-name').value = ''
+
+        emailLabel.innerHTML = "email"
+        emailLabel.style.color = "var(--white)"
+        emailLabel.style.fontWeight = "200";
+        emailInput.style.boxShadow = "none"
+
+    } else {
+        error = `must contain "@"`
+        emailLabel.innerHTML = "email : " + error
+        emailLabel.style.color = "var(--pink)"
+        emailLabel.style.fontWeight = "300";
+        emailInput.style.boxShadow = "inset 0 0 0 2px #fffffa"
+
+    }
+}
+
+function registerClose() {
+    dRegister.close()
+}

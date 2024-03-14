@@ -25,6 +25,28 @@
     }
 }
 
+.navbar-toggler {
+    padding: 6px 12px;
+    border: 1px solid var(--dark);
+
+    &:focus {
+        outline: none;
+        box-shadow: none;        
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: inset 0 0 2px 1px var(--dark);
+    }
+
+    &:active {
+        box-shadow: inset 0 0 2px 1px var(--dark);
+    }
+}
+
+.fa-bars {
+    font-size: 1.5rem;
+}
 
 /* HEADER */
 
@@ -217,6 +239,15 @@
 .time-symbol {
     font-size: 1rem;
     transform: translateY(-7px);
+    
+    @media (max-width: 414px) {
+        transform: translate(4px, -7px);
+    }
+
+    @media (max-width: 375px) {
+        transform: translate(8px, -7px);
+    }
+
 }
 
 .promotion-titles {
@@ -246,17 +277,41 @@
     }
 
     & input {
+        padding: 5px;
+        color: var(--dark);
         background-color: var(--pink);
         border: none;
         border-radius: 5px;
         width: 100%;
+    }
+
+    & input:focus-visible {
+        outline: none;
+        box-shadow: inset 0 0 1px 1px var(--white);
 
     }
-        
+    
     .btn-register {
         font-weight: 400;
+        background-color: var(--white);
         color: var(--dark);
-        background-color: var(--cream);
+        
+        &:hover {
+            background-color: var(--dark);
+            color: var(--white);
+            border: 1px solid var(--white);
+        }
+
+        &:active {
+            background-color: var(--dark);
+            color: var(--white);
+            border: 1px solid var(--white);
+            box-shadow: inset 0 0 1px 1px var(--white);
+        }
+
+        &:focus-visible {
+            border: 2px solid var(--pink)
+        }
     }
     
     @media (max-width: 992px) {
@@ -291,7 +346,7 @@ footer .icons {
 }
 
 
-/* DIALOG */
+/* DIALOGS */
 
 .dialog {
     width: 100%;
@@ -307,10 +362,11 @@ footer .icons {
 
     & p {
         font-weight: 300;
-        font-size: calc(1.2rem + .5vw);
+        font-size: calc(1rem + .5vw);
     }
 
-    & p:nth-child(even) {
+
+    & .p-buy, & p:nth-child(even) {
         font-weight: 100;
         font-size: calc(.7rem + .5vw);
     }
@@ -320,14 +376,14 @@ footer .icons {
     color: var(--white);
 }
 
-.btn-dialog-buy {
+.btn-dialog-buy, .btn-register-close {
     margin-top: 40px;
-    background-color: transparent;
-    border: 1px solid var(--white);
-    color: var(--white);
-
+    background-color: var(--white);
+    color: var(--dark);
+    
     &:hover {
-        background-color: var(--white);
-        color: var(--dark);
+        background-color: var(--dark);
+        color: var(--white);
+        border: 1px solid var(--white);
     }
 }
