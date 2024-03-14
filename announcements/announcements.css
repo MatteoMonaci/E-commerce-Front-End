@@ -13,6 +13,13 @@
 }
 
 /* FILTER */
-.accordion-item, .accordion-flush>.accordion-item:last-child {
-    border: none;
+#ann-wrapper {
+    background-color: var(--pink);
+
 }
+
+#ann footer {
+    margin-top: 0;
+}
+
+

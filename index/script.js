@@ -78,7 +78,7 @@ fetch('https://fakestoreapi.com/products')
 
         let lastAnn = data.slice(-num)
     
-        lastAnn.forEach((ann, index) => {
+        lastAnn.forEach((ann) => {
             let card = document.createElement('div');
             card.classList.add('col-10', 'col-sm-6', 'col-lg-3', 'd-flex', 'justify-content-center');
             card.innerHTML = `
@@ -86,7 +86,7 @@ fetch('https://fakestoreapi.com/products')
                     <div class="card-img-top"></div>
                     <div class="card-body d-flex flex-column justify-content-between">
                         <div>
-                            <h5 class="card-title" id="title_${index}">${troncate(ann.title, 30)}</h5>
+                            <h5 class="card-title">${troncate(ann.title, 30)}</h5>
                             <p class="card-text">${troncate(ann.description, 80)}</p>
                             </div>
                         <div class="mt-3">
@@ -117,7 +117,6 @@ fetch('https://fakestoreapi.com/products')
             cardsWrapper.innerHTML = "";
             showCardsLastAnn(8);
             lastAnnBtn.innerHTML = "see all"
-            // window.location.href = "announcements.html";
             confirmLastAnnBtn = false;
 
             // creating link see less
@@ -147,7 +146,8 @@ fetch('https://fakestoreapi.com/products')
             lastAnnBtn.innerHTML = "see more"
             confirmLastAnnBtn = true;
 
-            window.location.href = "announcements.html";
+            window.location.href = "../announcements/announcements.html";
+
         }
     })
 
