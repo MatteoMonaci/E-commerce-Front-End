@@ -34,6 +34,27 @@ fetch('https://fakestoreapi.com/products')
 
     }
 
-    showCardsAnn()
+    showCardsAnn();
+
+    dialogBuy();
+
+    function dialogBuy() {
+        let dBuy = $('.d-buy')
+        
+        let btnBuy = $$('.btn-buy')
+        
+        function openDialogBuy() {
+            dBuy.setAttribute('open', true);
+        }
+        let btnDialogBuy = $('.btn-dialog-buy')
+        
+        btnBuy.forEach((btn) => {
+            btn.addEventListener('click', openDialogBuy) 
+        })
+
+        btnDialogBuy.addEventListener('click', () => {
+            dBuy.close()
+        })
+    }
 
 });

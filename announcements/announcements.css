@@ -9,7 +9,7 @@
 /* HEADER */
 #ann-title {
     font-family: "Elanorlight";
-    font-size: calc(1rem + 6vw);
+    font-size: calc(1rem + 5.6vw);
 }
 
 /* FILTER */
@@ -18,8 +18,42 @@
 
 }
 
-#ann footer {
-    margin-top: 0;
+.accordion h2 {
+    font-size: 1.5rem;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+#section-cards {
+    animation: zoom-in .6s ease forwards;
+}
+
+@keyframes zoom-in {
+    0% {
+        width: 90%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-10%);
+    }
+    75% {
+        transform: translateX(2%);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 
+/* FOOTER */
+#ann footer {
+    margin-top: 0;
+}

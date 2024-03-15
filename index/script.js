@@ -103,7 +103,7 @@ fetch('https://fakestoreapi.com/products')
 
         })
 
-        dialog();
+        dialogBuy();
 
     }
 
@@ -160,7 +160,7 @@ fetch('https://fakestoreapi.com/products')
     }
 
     
-    function dialog() {
+    function dialogBuy() {
         let dBuy = $('.d-buy')
         
         let btnBuy = $$('.btn-buy')
@@ -225,7 +225,7 @@ let timeInterval = setInterval(() => {
 //form
 let dRegister = $('.d-register')
 
-function register() {
+function dialogRegister() {
 
     let emailValue = $('#email').value;
     let isValid = emailValue.includes("@")
@@ -258,6 +258,6 @@ function register() {
     }
 }
 
-function registerClose() {
+function dialogRegisterClose() {
     dRegister.close()
 }
