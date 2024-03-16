@@ -187,7 +187,7 @@
     border: 1px solid var(--pink);
     background-color: var(--pink);
 
-    &:hover {
+    &:hover, &:focus-visible {
         border: 1px solid var(--dark);
         background-color: var(--cream);
         color: var(--dark);
@@ -262,7 +262,6 @@
         transform: translateX(3px);
     }
 }
-
 
 .form {
     background-color: var(--dark);

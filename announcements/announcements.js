@@ -35,9 +35,9 @@ fetch('https://fakestoreapi.com/products')
     }
 
     showCardsAnn();
-
     dialogBuy();
 
+    //dialog
     function dialogBuy() {
         let dBuy = $('.d-buy')
         
@@ -56,5 +56,10 @@ fetch('https://fakestoreapi.com/products')
             dBuy.close()
         })
     }
+
+    //filters
+
+    //byWord
+    
 
 });

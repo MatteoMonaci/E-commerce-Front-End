@@ -55,9 +55,9 @@
 
 
     /* FILTER */
-    .accordion h2 {
+    /* .accordion h2 {
         padding-left: 1.15rem;
-    }
+    } */
 
     #section-cards {
     animation: slide-in .8s ease forwards;

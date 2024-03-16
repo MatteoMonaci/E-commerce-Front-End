@@ -9,7 +9,7 @@
 /* HEADER */
 #ann-title {
     font-family: "Elanorlight";
-    font-size: calc(.9rem + 5.2vw);
+    font-size: calc(3rem + 2vw);
 }
 
 /* FILTER */
@@ -18,12 +18,67 @@
     min-height: 100vh;
 }
 
-.accordion h2 {
-    font-size: 1.5rem;
+#accordion-title {
     font-weight: 200;
-    margin-bottom: 20px;
+    padding: 23px;
 }
 
+.accordion {
+    --bs-accordion-bg: var(--white);
+    border: 2px solid var(--cream);
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 200;
+    }
+
+    .accordion-body {
+    
+        padding: 25px;
+    
+        #word {
+            width: 100%;
+            margin: 10px 0px;
+        }
+    }
+    
+    input {
+        outline: none;
+        border: .5px solid var(--dark);
+        border-radius: 5px;
+        padding: 8px;
+        background-color: var(--white);
+        box-shadow: none;
+
+        &:focus {
+            border: .5px solid var(--pink);
+            outline: 1px solid var(--pink);
+        }        
+    }
+}
+
+.accordion-item {
+    border-bottom: 2px solid var(--cream);
+}
+
+.accordion-button {
+    color: var(--dark);
+    background-color: var(--white);
+    padding: 25px;
+
+    &:not(.collapsed) {
+        color: var(--dark);
+        background-color: var(--pink);
+    }
+
+    &:focus {
+        box-shadow: none;
+    }
+
+    &:focus-visible {
+    box-shadow: 0 0px 1px 1px var(--pink);
+    }
+}
 #section-cards {
     animation: zoom-in .6s ease forwards;
 }
