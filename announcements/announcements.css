@@ -9,13 +9,13 @@
 /* HEADER */
 #ann-title {
     font-family: "Elanorlight";
-    font-size: calc(1rem + 5.6vw);
+    font-size: calc(.9rem + 5.2vw);
 }
 
 /* FILTER */
 #ann-wrapper {
     background-color: var(--pink);
-
+    min-height: 100vh;
 }
 
 .accordion h2 {

@@ -5,6 +5,9 @@
         width: 90%;
     }
 
+    ::-webkit-scrollbar{
+        display: none;
+    }
     
     /* HEADER */
     #title div {

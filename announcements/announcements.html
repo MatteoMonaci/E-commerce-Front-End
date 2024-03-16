@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../index/style.css">
     <link rel="stylesheet" href="../announcements/announcements.css">
     <!-- media queries -->
-    <link rel="stylesheet" href="../announcements/media-query-ann.css">
+    <link rel="stylesheet" href="../announcements/ann-media-query.css">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,21 +65,22 @@
 
     <!-- header -->
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-12 d-flex justify-content-center">
-                    <h1 id="ann-title">all announcements</h1>
+        <div class="container-fluid">
+            <div class="row justify-content-center justify-content-lg-end">
+                <div class="col-12 col-lg-7 d-flex justify-content-center">
+                    <h1 id="ann-title">announcements</h1>
                 </div>
             </div>
         </div>
     </header>
 
     <!-- filter -->
+
     <div class="container-fluid" id="filter-section">
         <div class="row d-flex justify-content-center justify-content-lg-between">
 
-            <!-- accordion -->
-            <div class="col-10 col-lg-4 ps-lg-5">
+
+            <div class="col-10 col-sm-8 col-lg-4 ps-lg-5">
                 <div class="accordion">
                     <h2 class="text-center text-lg-start">Filter By</h2>
                     <div class="accordion-item">
@@ -97,15 +98,14 @@
                 </div>
             </div>
 
-            <!-- cards -->
             <div class="col-12 mt-lg-0 col-lg-7 d-flex px-0 mt-5" id="section-cards">
                 <div class="container-fluid">
                     <div class="row pt-5 px-5" id="ann-wrapper">
-                        <!-- dynamic cards -->
+
                     </div>
                 </div>
             </div>
-
+            
         </div>
     </div>
 

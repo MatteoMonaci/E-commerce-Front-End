@@ -134,11 +134,6 @@
     padding-right: 100px;
 }
 
-::-webkit-scrollbar{
-    background: transparent;
-
-}
-
 .last-ann-container {
     margin: 0 10%;
     background-color: var(--pink);
