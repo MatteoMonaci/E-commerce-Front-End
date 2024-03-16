@@ -168,6 +168,7 @@ fetch('https://fakestoreapi.com/products')
         function openDialogBuy() {
             dBuy.setAttribute('open', true);
         }
+        
         let btnDialogBuy = $('.btn-dialog-buy')
         
         btnBuy.forEach((btn) => {
