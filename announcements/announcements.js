@@ -162,6 +162,7 @@ fetch('https://fakestoreapi.com/products')
         let filteredByPrice = filterByPrice(filteredByCategory)
 
         showCardsAnn(filteredByPrice)
+        dialogBuy();
 
         if (filteredByPrice.length == 0) {
             let div = document.createElement('div')
