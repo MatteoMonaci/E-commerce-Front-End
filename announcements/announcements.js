@@ -67,13 +67,12 @@ fetch('https://fakestoreapi.com/products')
     //byWord
     const inputWord = $('#word');
 
-    inputWord.addEventListener('input', () => {
+    function filterByWord(array) {
         const searchWord = inputWord.value.toLowerCase();
-        const filteredByWord = data.filter(ann => ann.title.toLowerCase().includes(searchWord));
+        const filtered = array.filter(ann => ann.title.toLowerCase().includes(searchWord));
 
-        showCardsAnn(filteredByWord);
-        dialogBuy();
-    });
+        return filtered
+    }
 
 
     // byCategory
@@ -97,17 +96,16 @@ fetch('https://fakestoreapi.com/products')
     })
 
     let allCategoriesInput = Array.from(document.querySelectorAll('.input-category'));
-    console.log(allCategoriesInput);
 
-    allCategoriesInput.forEach(input => input.addEventListener('click', () => {
-        filteredByCategory(input)
-    }))
+    function filterByCategory(array){
+        let checked = allCategoriesInput.find((input) => input.checked)
+        let categoria = checked.id
 
-    function filteredByCategory(input) {
-        if(input.checked) {
-            let filtered = data.filter(ann => ann.category === input.id);
-            showCardsAnn(filtered);
-            dialogBuy();
+        if(categoria != 'all'){
+            let filtered = array.filter((el) => el.category == categoria)
+            return filtered
+        } else {
+            return array
         }
     }
 
@@ -125,21 +123,63 @@ fetch('https://fakestoreapi.com/products')
     fieldPrice.value = priceRange.value
 
 
+    function filterByPrice(array) {
+        let filtered = array.filter(ann => ann.price <= fieldPrice.value)
+        return filtered
+    }
+    
+    
+    // events
+    inputWord.addEventListener('input', () => {
+        globalfilter()
+    });
+    
+    allCategoriesInput.forEach(input => input.addEventListener('click', () => {
+        globalfilter()
+    }))
+
     priceRange.addEventListener('input', () => {
         fieldPrice.value = priceRange.value
-        filteredByPrice(priceRange.value)
+        globalfilter()
     })
 
 
     fieldPrice.addEventListener('input', () => {
         setTimeout(() => {
             priceRange.value = fieldPrice.value;
-            filteredByPrice(fieldPrice.value);
+            globalfilter();
         }, 800);
     });
 
-    function filteredByPrice(value) {
-        let filtered = data.filter(ann => ann.price <= value)
-        showCardsAnn(filtered)
+
+    // globalfilter
+    function globalfilter() {
+        let filteredByWord = filterByWord(data)
+        let filteredByCategory = filterByCategory(filteredByWord)
+        let filteredByPrice = filterByPrice(filteredByCategory)
+
+        showCardsAnn(filteredByPrice)
+
+
+        if (filteredByPrice.length == 0) {
+            searchFail()
+        }
     }
+
+    function searchFail() {
+        let div = document.createElement('div')
+        div.classList.add('text-center', 'my-auto')
+        div.style.fontSize = "calc(1rem + .5vw)"
+        div.style.fontWeight = "200"
+        div.innerHTML = `
+            <p> your search returned no results </p>    
+            <p> <a href="announcements.html" class="link-search-fail">click here</a> to find what you're looking for.</p>
+        `
+        
+        annWrapper.style.height = "60vh"
+        annWrapper.style.paddingBottom = "0"
+        annWrapper.classList.remove('pt-5')
+        annWrapper.appendChild(div);
+    }
+
 });

@@ -1,0 +1,12 @@
+    // priceRange.addEventListener('input', () => {
+    //     fieldPrice.value = priceRange.value
+    //     filteredByPrice(priceRange.value)
+    // })
+
+
+    // fieldPrice.addEventListener('input', () => {
+    //     setTimeout(() => {
+    //         priceRange.value = fieldPrice.value;
+    //         filteredByPrice(fieldPrice.value);
+    //     }, 800);
+    // });
