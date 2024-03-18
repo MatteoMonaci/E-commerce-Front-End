@@ -70,7 +70,6 @@ fetch('https://fakestoreapi.com/products')
     function filterByWord(array) {
         const searchWord = inputWord.value.toLowerCase();
         const filtered = array.filter(ann => ann.title.toLowerCase().includes(searchWord));
-
         return filtered
     }
 
@@ -80,8 +79,6 @@ fetch('https://fakestoreapi.com/products')
 
     const uniqueCategories = [...new Set(allCategories)];
 
-    console.log(uniqueCategories);
-
     let categoriesBody = $('#categories-body')
 
     uniqueCategories.forEach((category) => {
@@ -89,7 +86,7 @@ fetch('https://fakestoreapi.com/products')
         div.classList.add('d-flex', 'align-item-center')
         div.innerHTML = `
             <input type="radio" class="input-category" id="${category}" name="category">
-            <label for="${category}" class="ps-3">${category}</label>
+            <label for="${category}" class="ps-3 align-self-center">${category}</label>
         `
         categoriesBody.appendChild(div)
 
@@ -108,6 +105,12 @@ fetch('https://fakestoreapi.com/products')
             return array
         }
     }
+
+    var radioButtonAll = $('#all');
+    radioButtonAll.addEventListener("focus", function() {
+        radioButtonAll.checked = true;
+    });
+
 
 
     // byPrice
@@ -160,26 +163,21 @@ fetch('https://fakestoreapi.com/products')
 
         showCardsAnn(filteredByPrice)
 
-
         if (filteredByPrice.length == 0) {
-            searchFail()
+            let div = document.createElement('div')
+            div.classList.add('text-center', 'my-auto')
+            div.style.fontSize = "calc(1rem + .5vw)"
+            div.style.fontWeight = "200"
+            div.innerHTML = `
+                <p> your search returned no results </p>    
+                <p> <a href="announcements.html" class="link-search-fail">click here</a> to find what you're looking for.</p>
+            `
+            
+            annWrapper.style.height = "60vh"
+            annWrapper.style.paddingBottom = "0"
+            annWrapper.classList.remove('pt-5')
+            annWrapper.appendChild(div);
         }
-    }
-
-    function searchFail() {
-        let div = document.createElement('div')
-        div.classList.add('text-center', 'my-auto')
-        div.style.fontSize = "calc(1rem + .5vw)"
-        div.style.fontWeight = "200"
-        div.innerHTML = `
-            <p> your search returned no results </p>    
-            <p> <a href="announcements.html" class="link-search-fail">click here</a> to find what you're looking for.</p>
-        `
-        
-        annWrapper.style.height = "60vh"
-        annWrapper.style.paddingBottom = "0"
-        annWrapper.classList.remove('pt-5')
-        annWrapper.appendChild(div);
     }
 
 });
