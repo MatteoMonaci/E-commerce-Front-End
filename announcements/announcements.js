@@ -32,10 +32,12 @@ fetch('https://fakestoreapi.com/products')
             let cardImgTop = card.querySelector('.card-img-top');
             cardImgTop.style.backgroundImage = `url('${ann.image}')`;
             annWrapper.prepend(card);
+            annWrapper.style.minHeight = "max-content";
+            
         })
 
     }
-
+    
     showCardsAnn(data);
     dialogBuy();
 
@@ -68,9 +70,6 @@ fetch('https://fakestoreapi.com/products')
     inputWord.addEventListener('input', () => {
         const searchWord = inputWord.value.toLowerCase();
         const filteredByWord = data.filter(ann => ann.title.toLowerCase().includes(searchWord));
-
-        annWrapper.innerHTML = '';
-        annWrapper.style.minHeight = "max-content";
 
         showCardsAnn(filteredByWord);
         dialogBuy();
@@ -112,4 +111,35 @@ fetch('https://fakestoreapi.com/products')
         }
     }
 
+
+    // byPrice
+    const prices = data.map(ann => ann.price)
+    const maxPrice = prices.sort((a, b) => b - a)[0]
+    const minPrice = prices.sort((a, b) => a - b)[0]
+
+    const priceRange = $('#price-range');
+    const fieldPrice = $('.field-price')
+    priceRange.max = maxPrice;
+    priceRange.min = minPrice;
+    priceRange.value = maxPrice;
+    fieldPrice.value = priceRange.value
+
+
+    priceRange.addEventListener('input', () => {
+        fieldPrice.value = priceRange.value
+        filteredByPrice(priceRange.value)
+    })
+
+
+    fieldPrice.addEventListener('input', () => {
+        setTimeout(() => {
+            priceRange.value = fieldPrice.value;
+            filteredByPrice(fieldPrice.value);
+        }, 800);
+    });
+
+    function filteredByPrice(value) {
+        let filtered = data.filter(ann => ann.price <= value)
+        showCardsAnn(filtered)
+    }
 });

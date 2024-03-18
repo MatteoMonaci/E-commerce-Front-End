@@ -80,6 +80,7 @@
     box-shadow: 0 0px 1px 1px var(--pink);
     }
 }
+
 #section-cards {
     animation: zoom-in .6s ease forwards;
 }
@@ -106,6 +107,13 @@
     100% {
         transform: translateX(0);
     }
+}
+
+.field-price  {
+    width: 100px;
+    height: 50px;
+    border: 1px solid var(--pink);
+    border-radius: 10px;
 }
 
 
