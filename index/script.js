@@ -9,12 +9,12 @@ let totalAnn = $('#total-ann');
 
 let countingConfirm = true;
 
-function createCounting (el, start, num, end, freq) {
+function createCounting (el, start, increase, end, freq) {
     let counter = start;
     if (countingConfirm) {
         let interval = setInterval(() => {
             if (counter < end) {
-                counter += num;
+                counter += increase;
                 el.innerHTML = counter + "k"
             } else {
                 clearInterval(interval)

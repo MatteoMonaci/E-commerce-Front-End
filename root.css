@@ -1,17 +1,9 @@
 :root {
     --white: #fffffa;
-    --cream: rgb(235, 245, 238);
-    --pink: rgb(255, 116, 119);
+    --cream: #ebf5ee;
+    --pink: #ff7477;
     --dark: #143c49;
-    --secondary-dark: #455C63;
-}
-
-.B {
-    border: 1px solid red;
-}
-
-.A {
-    border: 1px solid blue;
+    --secondary-dark: hwb(194 27% 61%);
 }
 
 * {

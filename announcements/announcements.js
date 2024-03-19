@@ -62,6 +62,7 @@ fetch('https://fakestoreapi.com/products')
     };
 
 
+
     //filters
 
     //byWord
@@ -112,7 +113,6 @@ fetch('https://fakestoreapi.com/products')
     });
 
 
-
     // byPrice
     const prices = data.map(ann => ann.price)
     const maxPrice = prices.sort((a, b) => b - a)[0]
@@ -145,7 +145,6 @@ fetch('https://fakestoreapi.com/products')
         fieldPrice.value = priceRange.value
         globalfilter()
     })
-
 
     fieldPrice.addEventListener('input', () => {
         setTimeout(() => {

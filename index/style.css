@@ -20,10 +20,7 @@
     color: rgba(20, 60, 73, 0.7);
     text-decoration: none;
 
-    &:hover {
-        color: var(--dark);
-    }
-
+    &:hover,
     &:active {
         color: var(--dark);
     }
@@ -38,12 +35,9 @@
         box-shadow: none;        
     }
 
-    &:focus-visible {
-        outline: none;
-        box-shadow: inset 0 0 2px 1px var(--dark);
-    }
-
+    &:focus-visible,
     &:active {
+        outline: none;
         box-shadow: inset 0 0 2px 1px var(--dark);
     }
 }
@@ -51,6 +45,7 @@
 .fa-bars {
     font-size: 1.5rem;
 }
+
 
 /* HEADER */
 
@@ -139,7 +134,7 @@
     background-color: var(--pink);
     padding-bottom: 30px;
 
-    & h3 {
+    h3 {
         font-family: "ElanorLight";
         font-size: calc(1.8rem + .9vw);
         margin: 0;
@@ -162,24 +157,24 @@
     background-color: var(--cream);
     border-radius: 0 0 0.375rem 0.375rem;
 
-    & h5 {
+    h5 {
         font-weight: 400;
         font-size: calc(.7rem + .8vw);
     }
 
-    & .card-text {
+    .card-text {
         font-weight: 200;
         font-size: calc(.7rem + .3vw);
     }
 
-    & .price {
+    .price {
         font-weight: 400;
         font-size: calc(.7rem + .3vw);
     }
-}
 
-.fa-bag-shopping {
-    font-size: 1.2rem;
+    .fa-bag-shopping {
+        font-size: 1.2rem;
+    }
 }
 
 .btn-buy {
@@ -225,7 +220,6 @@
 .time {
     font-family: "ElanorBold";
     font-size: 3.5rem;
-    /* transform: translateY(5px); */
     transform: translate(-2px, 5px);
 }
 
@@ -245,17 +239,16 @@
     @media (max-width: 375px) {
         transform: translate(8px, -7px);
     }
-
 }
 
 .promotion-titles {
-    & h5 {
+    h5 {
         margin: 0;
         font-family: "ElanorLight";
         font-size: calc(2rem + 1.2vw);
     }
 
-    & p {
+    p {
         font-weight: 200;
         font-size: calc(0.7rem + .6vw);
         transform: translateX(3px);
@@ -267,13 +260,13 @@
     border-radius: 10px;
     padding: 25px 40px 40px 40px;
 
-    & label {
+    label {
         color: var(--white);
         margin-bottom: 10px;
         font-weight: 200;
     }
 
-    & input {
+    input {
         padding: 5px;
         color: var(--dark);
         background-color: var(--pink);
@@ -282,7 +275,7 @@
         width: 100%;
     }
 
-    & input:focus-visible {
+    input:focus-visible {
         outline: none;
         box-shadow: inset 0 0 1px 1px var(--white);
 
@@ -324,7 +317,7 @@ footer {
     border-top: 1px solid var(--pink);
     color: var(--dark);
 
-    & h6 {
+    h6 {
         font-family: "ElanorLight";
         font-size: calc(1.2rem + .6vw);
         margin-top: 30px;
@@ -338,11 +331,10 @@ footer {
 footer .icons {
     padding-bottom: 20px;
 
-    & i {
+    i {
         font-size: 28px;
         padding: 20px;
     }
-
 }
 
 
@@ -355,25 +347,23 @@ footer .icons {
     background-color: rgba(20, 60, 73, .95);
     z-index: 9999;
 
-    & h5 {
+    h5 {
         font-family: "ElanorBold";
         font-size: calc(3rem + 5vw);
+        color: var(--white);
     }
 
-    & p {
+    p {
         font-weight: 300;
         font-size: calc(1rem + .5vw);
+        color: var(--white);
     }
 
 
-    & .p-buy, & p:nth-child(even) {
+    .p-buy, & p:nth-child(even) {
         font-weight: 100;
         font-size: calc(.7rem + .5vw);
     }
-}
-
-.dialog h5, .dialog p {
-    color: var(--white);
 }
 
 .btn-dialog-buy, .btn-register-close {
